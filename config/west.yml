@@ -3,8 +3,8 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
 
-    - name: whoop-t
-      url-base: https://github.com/whoop-t
+    - name: mihirsoni826
+      url-base: https://github.com/mihirsoni826
 
   projects:
     - name: zmk
@@ -13,7 +13,7 @@ manifest:
       import: app/west.yml
 
     - name: nice-luffy-gear-five
-      remote: whoop-t
+      remote: mihirsoni826
       revision: main
 
   self:
