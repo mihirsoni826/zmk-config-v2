@@ -14,7 +14,7 @@
         compatible = "zmk,combos";
 
         double_corner_capslock {
-            bindings = <&caps_word>;
+            bindings = <&kp CAPS>;
             key-positions = <24 35>;
         };
     };
