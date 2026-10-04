@@ -16,5 +16,9 @@ manifest:
       remote: mihirsoni826
       revision: main
 
+    - name: nice-view-luffy-dog
+      remote: mihirsoni826
+      revision: main
+
   self:
     path: config
