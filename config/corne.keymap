@@ -19,6 +19,22 @@
         };
     };
 
+    macros {
+        notification_center_macro: notification_center_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp GLOBE>,
+                <&macro_tap>,
+                <&kp N>,
+                <&macro_release>,
+                <&kp GLOBE>;
+
+            label = "NOTIFICATION_CENTER_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -60,10 +76,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &trans    &trans          &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
-&trans  &trans    &studio_unlock  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
-                                  &trans    &trans    &trans       &trans     &trans     &trans
+&trans  &kp EXCL  &kp AT          &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans  &trans    &trans          &trans    &trans    &lt 3 K_APP    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
+&trans  &trans    &studio_unlock  &trans    &trans    &trans         &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
+                                  &trans    &trans    &trans         &trans     &trans     &trans
+            >;
+        };
+
+        functions {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none                       &none  &none  &kp K_VOLUME_DOWN     &kp K_VOLUME_UP       &none
+&none  &none  &none  &none  &none  &none    &none                       &none  &none  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none
+&none  &none  &none  &none  &none  &none    &notification_center_macro  &none  &none  &none                 &none                 &none
+                     &none  &none  &none    &none                       &none  &none
             >;
         };
     };
