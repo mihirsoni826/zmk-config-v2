@@ -13,12 +13,14 @@
     combos {
         compatible = "zmk,combos";
 
-        capslock {
+        combo_capslock {
             bindings = <&kp CAPSLOCK>;
             key-positions = <5 6>;
+            timeout-ms = <100>;
+            layers = <0>;
         };
 
-        a_f_space {
+        combo_a_f_space {
             bindings = <&kp SPACE>;
             key-positions = <13 16>;
             slow-release;
@@ -26,7 +28,7 @@
             timeout-ms = <50>;
         };
 
-        a_d_shift {
+        combo_a_d_shift {
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <13 15>;
             slow-release;
